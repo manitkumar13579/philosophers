@@ -1,6 +1,0 @@
-#include<stdio.h>
-int main()
-{
-printf("its my first github upload");
-return 0;
-}
