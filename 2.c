@@ -1,30 +1,27 @@
 #include<stdio.h>
+#include<string.h>
+int word_count(char str[100]);
 int main()
 {
-	int i,c,s,a;
-        scanf("%d",&a);
-	for(i=0;i<a;i++)
-	{
-		if(i==a-1)
-		{
-			for(c=0;c<a;c++)
-				printf("* ");
-		}
-		else
-		{
-		for(s=1;s<a-i;s++)
-		    printf(" ");
-		printf("*");
-        if(i==0)
-            printf(" ");
-        else
-{
-		for(c=1;c<i+i;c++)
-			printf(" ");
-		printf("*");
+	int word=0;
+	char str[100];
+	scanf("%[^\n]",&str);
+	word=word_count(str);
+	printf("%d\n",word);
+	return 0;	
 }
- printf("\n");
-		}
+
+
+int word_count(char str[100])
+{
+	int i,a=0,len;
+        len=strlen(str);
+	for(i=0;i<len;i++)
+	{
+		if(str[i]==32)
+			a=a+1;
+		else
+			a=a;
 	}
-	return 0;
+	return a+1;
 }
